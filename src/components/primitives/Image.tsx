@@ -6,7 +6,7 @@ interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   fit?: 'cover' | 'contain';
 }
 export function Image({
-  fallbackSrc = '/market/svg/empty.png',
+  fallbackSrc = '/avatars/default-avatar.png',
   fit = 'cover',
   className,
   ...props

@@ -1,10 +1,9 @@
 import Link from 'next/link';
 
-export default function SidebarPage() {
+export default function SidebarSlot() {
   return (
     <div className='h-full p-4'>
       <div className='text-white text-lg font-semibold mb-6'>Sidebar</div>
-      {/* 5 link dashboard, product, category, user, setting */}
       <div className='flex flex-col gap-3'>
         <Link
           href='/dashboard'
