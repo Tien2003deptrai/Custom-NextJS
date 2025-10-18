@@ -1,4 +1,4 @@
-import { QueryClient } from '@tanstack/react-query';
+import { QueryClient } from '@tanstack/react-query'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -7,10 +7,10 @@ export const queryClient = new QueryClient({
       gcTime: 5 * 60_000,
       refetchOnWindowFocus: false,
       retry: (failureCount, error: any) => {
-        if (error?.response?.status === 404) return false;
-        return failureCount < 2;
+        if (error?.response?.status === 404) return false
+        return failureCount < 2
       },
     },
     mutations: { retry: false },
   },
-});
+})

@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import { AspectRatio } from '@/components/primitives/AspectRatio';
-import { Button } from '@/components/primitives/Button';
-import { Image } from '@/components/primitives/Image';
-import { Skeleton } from '@/components/primitives/Skeleton';
-import { Spinner } from '@/components/primitives/Spinner';
-import { useDisclosure } from '@/hooks/useDisclosure';
-import { useOnClickOutside } from '@/hooks/useOnClickOutside';
-import { useEventListener } from '@/hooks/useEventListener';
-import { useRef } from 'react';
+import { AspectRatio } from '@/components/primitives/AspectRatio'
+import { Button } from '@/components/primitives/Button'
+import { Image } from '@/components/primitives/Image'
+import { Skeleton } from '@/components/primitives/Skeleton'
+import { Spinner } from '@/components/primitives/Spinner'
+import { useDisclosure } from '@/hooks/useDisclosure'
+import { useOnClickOutside } from '@/hooks/useOnClickOutside'
+import { useEventListener } from '@/hooks/useEventListener'
+import { useRef } from 'react'
 
 // write data fake 5 + spinner + grid + card + loading skeleton
 const data = [
@@ -37,31 +37,29 @@ const data = [
     name: 'Product 5',
     price: 500,
   },
-];
+]
 
 function Card({ children }: { children: React.ReactNode }) {
-  return (
-    <div className='border border-gray-200 rounded-md p-4'>{children}</div>
-  );
+  return <div className="rounded-md border border-gray-200 p-4">{children}</div>
 }
 
 function Cards({ data }: { data: any[] }) {
   return (
-    <div className='grid grid-cols-3 gap-4'>
-      {data.map(item => (
+    <div className="grid grid-cols-3 gap-4">
+      {data.map((item) => (
         <Card key={item.id}>{item.name}</Card>
       ))}
     </div>
-  );
+  )
 }
 
 export default function SpinnerSkeletonPage() {
-  const isLoading = true;
-  if (data.length === 0) return <Spinner />;
-  const d = useDisclosure();
-  const ref = useRef<HTMLDivElement>(null);
-  useOnClickOutside(ref, d.close);
-  useEventListener('keydown', e => e.key === 'Escape' && d.close());
+  const isLoading = true
+  if (data.length === 0) return <Spinner />
+  const d = useDisclosure()
+  const ref = useRef<HTMLDivElement>(null)
+  useOnClickOutside(ref, d.close)
+  useEventListener('keydown', (e) => e.key === 'Escape' && d.close())
 
   // return isLoading ? (
   //   <div className='grid grid-cols-3 gap-4'>
@@ -90,17 +88,11 @@ export default function SpinnerSkeletonPage() {
   // );
   return (
     <>
-      <div className='w-1/2'>
+      <div className="w-1/2">
         <AspectRatio ratio={16 / 9}>
-          <Image
-            src={
-              'https://variety.com/wp-content/uploads/2015/02/spidey.jpg?w=1000&h=667&crop=1'
-            }
-            alt='image'
-            fit='cover'
-          />
+          <Image src={'https://variety.com/wp-content/uploads/2015/02/spidey.jpg?w=1000&h=667&crop=1'} alt="image" fit="cover" />
         </AspectRatio>
       </div>
     </>
-  );
+  )
 }

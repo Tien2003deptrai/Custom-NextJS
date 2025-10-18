@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
-import { Message } from './message/page';
+import { redirect } from 'next/navigation'
+import { Message } from './message/page'
 
 export default function DashboardPage() {
   return (
@@ -13,6 +13,6 @@ export default function DashboardPage() {
     <>
       <Message />
     </>
-  );
+  )
   // redirect('/dashboard/message');
 }
