@@ -203,10 +203,7 @@ export default function SidebarLeft() {
     const byTab = FAKE_DATA.filter(c => c.type === tab);
     if (!q.trim()) return byTab;
     const s = q.trim().toLowerCase();
-    return byTab.filter(
-      c =>
-        c.name.toLowerCase().includes(s) || c.snippet.toLowerCase().includes(s)
-    );
+    return byTab.filter(c => c.name.toLowerCase().includes(s) || c.snippet.toLowerCase().includes(s));
   }, [tab, q]);
 
   return (
@@ -215,11 +212,7 @@ export default function SidebarLeft() {
       <div className='px-4 py-4 pb-3 shrink-0'>
         <div className='flex items-center justify-between'>
           <h2 className='text-[18px] font-semibold'>Tin nhắn</h2>
-          <Button
-            size='sm'
-            variant='secondary'
-            className='h-8 w-8 p-0 rounded-lg'
-          >
+          <Button size='sm' variant='secondary' className='h-8 w-8 p-0 rounded-lg'>
             <Plus className='h-4 w-4' />
           </Button>
         </div>
@@ -253,11 +246,7 @@ export default function SidebarLeft() {
       <div className='px-3 pb-3 flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1'>
         <ul className='space-y-2'>
           {filtered.map((c, idx) => (
-            <ChatRow
-              key={c.id}
-              chat={c}
-              active={idx === 0 && tab === 'newest'}
-            />
+            <ChatRow key={c.id} chat={c} active={idx === 0 && tab === 'newest'} />
           ))}
         </ul>
       </div>
@@ -268,22 +257,12 @@ export default function SidebarLeft() {
 function ChatRow({ chat, active }: { chat: Chat; active?: boolean }) {
   return (
     <li
-      className={cn(
-        'group flex items-center gap-3 rounded-lg border',
-        active
-          ? 'border-neutral-200 bg-neutral-100'
-          : 'border-transparent hover:bg-neutral-50',
-        'px-3 py-2 cursor-pointer'
-      )}
+      className={cn('group flex items-center gap-3 rounded-lg border', active ? 'border-neutral-200 bg-neutral-100' : 'border-transparent hover:bg-neutral-50', 'px-3 py-2 cursor-pointer')}
       role='button'
       tabIndex={0}
     >
       <div className='relative'>
-        <Image
-          src={chat.avatar}
-          alt={chat.name}
-          className='w-10 h-10 rounded-full'
-        />
+        <Image src={chat.avatar} alt={chat.name} className='w-10 h-10 rounded-full' />
         {chat.online && (
           <span className='absolute -right-0.5 -bottom-0.5 h-3 w-3 rounded-full bg-white grid place-items-center'>
             <span className='h-2 w-2 rounded-full bg-emerald-500' />
@@ -294,22 +273,13 @@ function ChatRow({ chat, active }: { chat: Chat; active?: boolean }) {
       <div className='min-w-0 flex-1'>
         <div className='flex items-center gap-2'>
           <p className='text-sm font-medium truncate'>{chat.name}</p>
-          <span className='ml-auto whitespace-nowrap text-[11px] text-neutral-500'>
-            {chat.time}
-          </span>
+          <span className='ml-auto whitespace-nowrap text-[11px] text-neutral-500'>{chat.time}</span>
         </div>
-        <p className='mt-0.5 text-[12px] text-neutral-500 truncate'>
-          {chat.snippet}
-        </p>
+        <p className='mt-0.5 text-[12px] text-neutral-500 truncate'>{chat.snippet}</p>
       </div>
 
       <div className='ml-2 flex items-center gap-2'>
-        {chat.unread && (
-          <span
-            aria-label='unread'
-            className='h-2.5 w-2.5 rounded-full bg-violet-600'
-          />
-        )}
+        {chat.unread && <span aria-label='unread' className='h-2.5 w-2.5 rounded-full bg-violet-600' />}
         <button className='opacity-0 group-hover:opacity-100 transition-opacity'>
           <MoreHorizontal className='h-4 w-4 text-neutral-500' />
         </button>

@@ -29,11 +29,7 @@ export default function UseDisclosurePage() {
           <Button variant='danger' disabled={isDeleting.value}>
             Delete
           </Button>
-          <TextField
-            label='Email'
-            placeholder='you@domain.com'
-            error='Email không hợp lệ'
-          />
+          <TextField label='Email' placeholder='you@domain.com' error='Email không hợp lệ' />
           <TextField label='Name' error='Tên tối thiểu 3 ký tự' />
           <Select
             label='Role'

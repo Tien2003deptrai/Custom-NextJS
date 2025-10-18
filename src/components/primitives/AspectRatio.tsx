@@ -1,10 +1,4 @@
-export function AspectRatio({
-  ratio = 16 / 9,
-  children,
-}: {
-  ratio?: number;
-  children: React.ReactNode;
-}) {
+export function AspectRatio({ ratio = 16 / 9, children }: { ratio?: number; children: React.ReactNode }) {
   return (
     <div
       style={{

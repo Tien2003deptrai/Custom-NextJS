@@ -40,9 +40,7 @@ const data = [
 ];
 
 function Card({ children }: { children: React.ReactNode }) {
-  return (
-    <div className='border border-gray-200 rounded-md p-4'>{children}</div>
-  );
+  return <div className='border border-gray-200 rounded-md p-4'>{children}</div>;
 }
 
 function Cards({ data }: { data: any[] }) {
@@ -92,13 +90,7 @@ export default function SpinnerSkeletonPage() {
     <>
       <div className='w-1/2'>
         <AspectRatio ratio={16 / 9}>
-          <Image
-            src={
-              'https://variety.com/wp-content/uploads/2015/02/spidey.jpg?w=1000&h=667&crop=1'
-            }
-            alt='image'
-            fit='cover'
-          />
+          <Image src={'https://variety.com/wp-content/uploads/2015/02/spidey.jpg?w=1000&h=667&crop=1'} alt='image' fit='cover' />
         </AspectRatio>
       </div>
     </>

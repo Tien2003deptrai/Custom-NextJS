@@ -103,11 +103,7 @@ export default function SidebarRight() {
   return (
     <aside className='px-4 py-4'>
       <div className='flex items-center justify-between'>
-        <Button
-          variant='secondary'
-          size='sm'
-          className='h-8 w-8 p-0 rounded-lg cursor-pointer'
-        >
+        <Button variant='secondary' size='sm' className='h-8 w-8 p-0 rounded-lg cursor-pointer'>
           <ChevronLeft className='h-5 w-5' />
         </Button>
         <h2 className='text-lg font-semibold'>Media</h2>
@@ -126,13 +122,7 @@ export default function SidebarRight() {
       <div className='p-4'>
         <div className='grid grid-cols-3 gap-2.5'>
           {list.map(m => (
-            <Image
-              key={m.id}
-              src={m.url}
-              alt={m.id}
-              className='w-full h-full object-cover'
-              fit='cover'
-            />
+            <Image key={m.id} src={m.url} alt={m.id} className='w-full h-full object-cover' fit='cover' />
           ))}
         </div>
       </div>

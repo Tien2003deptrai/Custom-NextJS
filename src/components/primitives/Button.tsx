@@ -4,8 +4,7 @@ import { cn } from '@/lib/cn';
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger';
 type Size = 'sm' | 'md' | 'lg';
 
-const base =
-  'inline-flex items-center justify-center rounded-lg font-medium transition focus:outline-none focus:ring disabled:opacity-60 disabled:cursor-not-allowed';
+const base = 'inline-flex items-center justify-center rounded-lg font-medium transition focus:outline-none focus:ring disabled:opacity-60 disabled:cursor-not-allowed';
 const variants: Record<Variant, string> = {
   primary: 'bg-black text-white hover:opacity-90 focus:ring-2',
   secondary: 'bg-neutral-100 hover:bg-neutral-200 text-neutral-900',
@@ -18,19 +17,12 @@ const sizes: Record<Size, string> = {
   lg: 'h-12 px-5 text-base',
 };
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', ...props }, ref) => (
-    <button
-      ref={ref}
-      className={cn(base, variants[variant], sizes[size], className)}
-      {...props}
-    />
-  )
-);
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant = 'primary', size = 'md', ...props }, ref) => (
+  <button ref={ref} className={cn(base, variants[variant], sizes[size], className)} {...props} />
+));
 Button.displayName = 'Button';

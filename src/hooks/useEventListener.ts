@@ -1,10 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function useEventListener<K extends keyof WindowEventMap>(
-  event: K,
-  handler: (evt: WindowEventMap[K]) => void,
-  target: Window | Document | HTMLElement = window
-) {
+export function useEventListener<K extends keyof WindowEventMap>(event: K, handler: (evt: WindowEventMap[K]) => void, target: Window | Document | HTMLElement = window) {
   const saved = useRef(handler);
   useEffect(() => {
     saved.current = handler;

@@ -1,8 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export function useAsync<T extends unknown[], R>(
-  fn: (...args: T) => Promise<R>
-) {
+export function useAsync<T extends unknown[], R>(fn: (...args: T) => Promise<R>) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 

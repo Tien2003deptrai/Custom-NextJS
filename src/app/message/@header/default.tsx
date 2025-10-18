@@ -10,12 +10,8 @@ export default function HeaderMessage() {
       <div className='h-full px-4 flex items-center gap-4'>
         <div className='flex items-center gap-2 min-w-[150px]'>
           <div className='leading-tight select-none'>
-            <div className='font-semibold text-[18px] text-violet-600'>
-              Click QA
-            </div>
-            <div className='text-[10px] tracking-wide text-neutral-500 -mt-0.5'>
-              MASTER OF Q&A
-            </div>
+            <div className='font-semibold text-[18px] text-violet-600'>Click QA</div>
+            <div className='text-[10px] tracking-wide text-neutral-500 -mt-0.5'>MASTER OF Q&A</div>
           </div>
         </div>
 
@@ -41,17 +37,10 @@ export default function HeaderMessage() {
             <IconButton aria-label='Tin nhắn'>
               <MessageSquare className='h-5 w-5' />
             </IconButton>
-            <span className='absolute -right-1 -top-1 h-5 min-w-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] leading-5 text-center'>
-              9
-            </span>
+            <span className='absolute -right-1 -top-1 h-5 min-w-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] leading-5 text-center'>9</span>
           </div>
 
-          <Image
-            src='https://i.pravatar.cc/100?img=15'
-            alt='User avatar'
-            className='w-8 h-8 rounded-full'
-            fit='cover'
-          />
+          <Image src='https://i.pravatar.cc/100?img=15' alt='User avatar' className='w-8 h-8 rounded-full' fit='cover' />
 
           <ChevronDown className='h-4 w-4 text-neutral-600' />
         </div>
@@ -68,13 +57,7 @@ function IconButton({
   children: React.ReactNode;
 }) {
   return (
-    <button
-      className={
-        'h-10 w-10 grid place-items-center rounded-full hover:bg-neutral-100 text-neutral-700 ' +
-        (className ?? '')
-      }
-      {...rest}
-    >
+    <button className={'h-10 w-10 grid place-items-center rounded-full hover:bg-neutral-100 text-neutral-700 ' + (className ?? '')} {...rest}>
       {children}
     </button>
   );

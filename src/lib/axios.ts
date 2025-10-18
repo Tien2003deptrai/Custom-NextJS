@@ -25,11 +25,7 @@ instance.interceptors.response.use(
         if (!refreshing) {
           refreshing = (async () => {
             try {
-              const res = await axios.post(
-                `${instance.defaults.baseURL}/auth/refresh`,
-                {},
-                { withCredentials: true }
-              );
+              const res = await axios.post(`${instance.defaults.baseURL}/auth/refresh`, {}, { withCredentials: true });
               const newToken = res.data?.accessToken as string | undefined;
               if (newToken) localStorage.setItem('access_token', newToken);
               return newToken ?? null;
