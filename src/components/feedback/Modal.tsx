@@ -6,7 +6,6 @@ import { cn } from '@/lib/cn'
 import { useEventListener } from '@/hooks/useEventListener'
 
 export function Modal({ open, onClose, children, className }: { open: boolean; onClose: () => void; children: React.ReactNode; className?: string }) {
-export function Modal({ open, onClose, children, className }: { open: boolean; onClose: () => void; children: React.ReactNode; className?: string }) {
   useEffect(() => {
     if (!open) return
     const prev = document.body.style.overflow
