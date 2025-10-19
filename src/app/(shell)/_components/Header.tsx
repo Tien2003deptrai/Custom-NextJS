@@ -1,13 +1,14 @@
 // components/layout/Header.tsx
 'use client'
 
-import { Bell, ChevronDown, Search } from 'lucide-react'
+import { Bell, ChevronDown, Filter, Search } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 h-16 bg-white/80 shadow-lg backdrop-blur">
-      <div className="mx-auto flex h-full max-w-screen-2xl items-center gap-4 px-4">
+      <div className="flex h-full items-center justify-between gap-4 px-4">
         {/* Logo */}
         <div className="flex shrink-0 items-center gap-2">
           <div className="relative h-8 w-8 rounded-full bg-indigo-600">
@@ -27,6 +28,11 @@ export default function Header() {
 
         {/* Actions */}
         <nav className="flex items-center gap-3">
+          <Link href="/course-store/filter" className="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium hover:bg-neutral-50">
+            <Filter className="size-4" />
+            <span>Bộ lọc</span>
+          </Link>
+
           <button className="relative grid size-9 place-items-center rounded-full border hover:bg-neutral-50">
             <Bell className="size-4" />
             <span className="absolute -top-1 -right-1 grid size-4 place-items-center rounded-full bg-rose-500 text-[10px] text-white">3</span>

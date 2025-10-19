@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import React, { useMemo, useState } from 'react';
-import { ChevronLeft } from 'lucide-react';
-import { Image } from '@/components/primitives/Image';
-import { Button } from '@/index';
-import { Tab } from '../_components/Tab';
+import React, { useMemo, useState } from 'react'
+import { ChevronLeft } from 'lucide-react'
+import { Image } from '@/components/primitives/Image'
+import { Button } from '@/index'
+import { Tab } from '../_components/Tab'
 
-type TabKey = 'photo' | 'video';
+type TabKey = 'photo' | 'video'
 
 type MediaItem = {
-  id: string;
-  url: string;
-  type: TabKey;
-};
+  id: string
+  url: string
+  type: TabKey
+}
 
 const FAKE_MEDIA: MediaItem[] = [
   // ẢNH
@@ -93,24 +93,24 @@ const FAKE_MEDIA: MediaItem[] = [
     url: 'https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=400',
     type: 'video',
   },
-];
+]
 
 export default function SidebarRight() {
-  const [tab, setTab] = useState<TabKey>('photo');
+  const [tab, setTab] = useState<TabKey>('photo')
 
-  const list = useMemo(() => FAKE_MEDIA.filter(m => m.type === tab), [tab]);
+  const list = useMemo(() => FAKE_MEDIA.filter((m) => m.type === tab), [tab])
 
   return (
-    <aside className='px-4 py-4'>
-      <div className='flex items-center justify-between'>
-        <Button variant='secondary' size='sm' className='h-8 w-8 p-0 rounded-lg cursor-pointer'>
-          <ChevronLeft className='h-5 w-5' />
+    <aside className="px-4 py-4">
+      <div className="flex items-center justify-between">
+        <Button variant="secondary" size="sm" className="h-8 w-8 cursor-pointer rounded-lg p-0">
+          <ChevronLeft className="h-5 w-5" />
         </Button>
-        <h2 className='text-lg font-semibold'>Media</h2>
-        <div className='h-9 w-9' />
+        <h2 className="text-lg font-semibold">Media</h2>
+        <div className="h-9 w-9" />
       </div>
 
-      <div className='flex justify-around items-center'>
+      <div className="flex items-center justify-around">
         <Tab active={tab === 'photo'} onClick={() => setTab('photo')}>
           Ảnh
         </Tab>
@@ -119,13 +119,13 @@ export default function SidebarRight() {
         </Tab>
       </div>
 
-      <div className='p-4'>
-        <div className='grid grid-cols-3 gap-2.5'>
-          {list.map(m => (
-            <Image key={m.id} src={m.url} alt={m.id} className='w-full h-full object-cover' fit='cover' />
+      <div className="p-4">
+        <div className="grid grid-cols-3 gap-2.5">
+          {list.map((m) => (
+            <Image key={m.id} src={m.url} alt={m.id} className="h-full w-full object-cover" fit="cover" />
           ))}
         </div>
       </div>
     </aside>
-  );
+  )
 }

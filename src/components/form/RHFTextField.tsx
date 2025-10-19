@@ -5,7 +5,7 @@ export function RHFTextField({ name, label, hint, ...rest }: { name: string; lab
   const {
     register,
     formState: { errors },
-  } = useFormContext();
-  const err = (errors as any)[name]?.message as string | undefined;
-  return <TextField label={label} hint={hint} error={err} {...register(name)} {...rest} />;
+  } = useFormContext()
+  const err = (errors as any)[name]?.message as string | undefined
+  return <TextField label={label} hint={hint} error={err} {...register(name)} {...rest} />
 }

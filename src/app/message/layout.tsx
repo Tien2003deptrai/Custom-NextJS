@@ -4,39 +4,29 @@ export default function MessageLayout({
   children,
   sidebarRight,
 }: {
-  header: React.ReactNode;
-  sidebarLeft: React.ReactNode;
-  children: React.ReactNode;
-  sidebarRight: React.ReactNode;
+  header: React.ReactNode
+  sidebarLeft: React.ReactNode
+  children: React.ReactNode
+  sidebarRight: React.ReactNode
 }) {
   return (
-    <div className='h-screen flex flex-col overflow-hidden'>
+    <div className="flex h-screen flex-col overflow-hidden">
       {header}
-      <div className='flex-1 flex overflow-hidden bg-white min-h-0'>
-        <aside
-          className='min-w-[300px] max-w-[360px] w-full h-full min-h-0
-                     overflow-y-auto overscroll-contain shadow-lg'
-        >
-          {sidebarLeft}
-        </aside>
+      <div className="flex min-h-0 flex-1 overflow-hidden bg-white">
+        <aside className="h-full min-h-0 w-full max-w-[360px] min-w-[300px] overflow-y-auto overscroll-contain shadow-lg">{sidebarLeft}</aside>
 
         <main
-          className='flex-1 h-full flex flex-col overflow-hidden min-h-0' // ✨
+          className="flex h-full min-h-0 flex-1 flex-col overflow-hidden" // ✨
         >
           <div
-            className='flex-1 overflow-y-auto overscroll-contain px-4 py-5 min-h-0' // ✨
+            className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-5" // ✨
           >
             {children}
           </div>
         </main>
 
-        <aside
-          className='min-w-[300px] max-w-[380px] w-full h-full min-h-0
-                     overflow-y-auto overscroll-contain shadow-lg'
-        >
-          {sidebarRight}
-        </aside>
+        <aside className="h-full min-h-0 w-full max-w-[380px] min-w-[300px] overflow-y-auto overscroll-contain shadow-lg">{sidebarRight}</aside>
       </div>
     </div>
-  );
+  )
 }

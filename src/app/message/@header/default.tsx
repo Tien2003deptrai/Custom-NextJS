@@ -1,52 +1,50 @@
-'use client';
+'use client'
 
-import { Button } from '@/components/primitives/Button';
-import { Bell, MessageSquare, ChevronDown, Search, Plus } from 'lucide-react';
-import { Image } from '@/components/primitives/Image';
+import { Button } from '@/components/primitives/Button'
+import { Bell, MessageSquare, ChevronDown, Search, Plus } from 'lucide-react'
+import { Image } from '@/components/primitives/Image'
 
 export default function HeaderMessage() {
   return (
-    <header className='h-16 bg-white shadow-sm sticky top-0 z-30'>
-      <div className='h-full px-4 flex items-center gap-4'>
-        <div className='flex items-center gap-2 min-w-[150px]'>
-          <div className='leading-tight select-none'>
-            <div className='font-semibold text-[18px] text-violet-600'>Click QA</div>
-            <div className='text-[10px] tracking-wide text-neutral-500 -mt-0.5'>MASTER OF Q&A</div>
+    <header className="sticky top-0 z-30 h-16 bg-white shadow-sm">
+      <div className="flex h-full items-center gap-4 px-4">
+        <div className="flex min-w-[150px] items-center gap-2">
+          <div className="leading-tight select-none">
+            <div className="text-[18px] font-semibold text-violet-600">Click QA</div>
+            <div className="-mt-0.5 text-[10px] tracking-wide text-neutral-500">MASTER OF Q&A</div>
           </div>
         </div>
 
-        <div className='flex-1 flex justify-center'>
-          <div className='relative w-full max-w-[680px]'>
+        <div className="flex flex-1 justify-center">
+          <div className="relative w-full max-w-[680px]">
             <input
-              type='text'
-              placeholder='Tìm kiếm'
-              className='w-full h-11 rounded-lg bg-neutral-100 text-sm
-                         pl-4 pr-10 outline-none border border-transparent placeholder:text-black
-                         focus:border-neutral-300 focus:bg-white'
+              type="text"
+              placeholder="Tìm kiếm"
+              className="h-11 w-full rounded-lg border border-transparent bg-neutral-100 pr-10 pl-4 text-sm outline-none placeholder:text-black focus:border-neutral-300 focus:bg-white"
             />
-            <Search className='absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400' />
+            <Search className="absolute top-1/2 right-3 h-5 w-5 -translate-y-1/2 text-neutral-400" />
           </div>
         </div>
 
-        <div className='flex items-center gap-3'>
-          <IconButton aria-label='Thông báo'>
-            <Bell className='h-5 w-5' />
+        <div className="flex items-center gap-3">
+          <IconButton aria-label="Thông báo">
+            <Bell className="h-5 w-5" />
           </IconButton>
 
-          <div className='relative'>
-            <IconButton aria-label='Tin nhắn'>
-              <MessageSquare className='h-5 w-5' />
+          <div className="relative">
+            <IconButton aria-label="Tin nhắn">
+              <MessageSquare className="h-5 w-5" />
             </IconButton>
-            <span className='absolute -right-1 -top-1 h-5 min-w-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] leading-5 text-center'>9</span>
+            <span className="absolute -top-1 -right-1 h-5 min-w-[18px] rounded-full bg-red-500 px-1 text-center text-[10px] leading-5 text-white">9</span>
           </div>
 
-          <Image src='https://i.pravatar.cc/100?img=15' alt='User avatar' className='w-8 h-8 rounded-full' fit='cover' />
+          <Image src="https://i.pravatar.cc/100?img=15" alt="User avatar" className="h-8 w-8 rounded-full" fit="cover" />
 
-          <ChevronDown className='h-4 w-4 text-neutral-600' />
+          <ChevronDown className="h-4 w-4 text-neutral-600" />
         </div>
       </div>
     </header>
-  );
+  )
 }
 
 function IconButton({
@@ -54,11 +52,11 @@ function IconButton({
   className,
   ...rest
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <button className={'h-10 w-10 grid place-items-center rounded-full hover:bg-neutral-100 text-neutral-700 ' + (className ?? '')} {...rest}>
+    <button className={'grid h-10 w-10 place-items-center rounded-full text-neutral-700 hover:bg-neutral-100 ' + (className ?? '')} {...rest}>
       {children}
     </button>
-  );
+  )
 }
