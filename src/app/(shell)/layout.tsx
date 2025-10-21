@@ -19,7 +19,7 @@ export default function ShellLayout({ children, left, right }: { children: React
     <>
       <Header />
       <div className={`grid min-h-[calc(100dvh-64px)] ${gridCols}`}>
-        {hasLeftSidebar && <aside className="border-r bg-white dark:bg-neutral-900">{left}</aside>}
+        {hasLeftSidebar && <aside>{left}</aside>}
 
         <main className="bg-neutral-50 dark:bg-neutral-950">{children}</main>
 
