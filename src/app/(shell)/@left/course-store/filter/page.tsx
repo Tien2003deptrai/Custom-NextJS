@@ -1,5 +1,5 @@
 import FilterLeft from '@/app/(shell)/course-store/filter/_components/FilterLeft'
 
-export default function FilterLeftPage() {
+export default function FilterLeftNewestPage() {
   return <FilterLeft />
 }
